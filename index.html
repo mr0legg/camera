@@ -32,7 +32,9 @@
 		var context = canvas.getContext('2d');
 		var video = document.getElementById('video');
 		// var mediaConfig = { video: true };
-		var mediaConfig = { video: { facingMode: { exact: "environment" } } };
+		// var mediaConfig = { video: { facingMode: "user" } };
+		// var mediaConfig = { video: { facingMode: { exact: "environment" } } };
+		var mediaConfig = { video: { facingMode: "environment" } };
 
 		// Put video listeners into place
 		if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
