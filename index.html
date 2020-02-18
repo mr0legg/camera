@@ -22,13 +22,7 @@
 			display: block;
 		}
 	</style>
-	<!-- <script src="index_files/cbgapi.loaded_1" async=""></script>
-	<script src="index_files/cbgapi.loaded_0" async=""></script>
-	<script async="" src="index_files/bsa.js"></script>
-	<script id="_carbonads_projs" type="text/javascript" src="index_files/CKYI5KQL.json"></script>
-	<script src="index_files/widgets.js" async="true"></script>
-	<script src="index_files/plusone.js" async="true" gapi_processed="true"></script>
-	<script charset="utf-8" src="index_files/button.js"></script> -->
+	
 </head>
 
 <body class=" demo-page">
@@ -51,9 +45,6 @@
 							var context = canvas.getContext('2d');
 							var video = document.getElementById('video');
 							var mediaConfig = { video: true };
-							var errBack = function (e) {
-								console.log('An error has occurred!', e)
-							};
 
 							// Put video listeners into place
 							if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
@@ -63,25 +54,6 @@
 									video.srcObject = stream;
 									video.play();
 								});
-							}
-
-							/* Legacy code below! */
-							else if (navigator.getUserMedia) { // Standard
-								navigator.getUserMedia(mediaConfig, function (stream) {
-									video.src = stream;
-									video.play();
-								}, errBack);
-							} else if (navigator.webkitGetUserMedia) { // WebKit-prefixed
-								navigator.webkitGetUserMedia(mediaConfig, function (stream) {
-									video.src = window.webkitURL.createObjectURL(stream);
-									video.play();
-								}, errBack);
-							} else if (navigator.mozGetUserMedia) { // Mozilla-prefixed
-								navigator.mozGetUserMedia(mediaConfig, function (stream) {
-									video.src = window.URL.createObjectURL(stream);
-									video.play();
-								}, errBack);
-							}
 
 							// Trigger photo take
 							document.getElementById('snap').addEventListener('click', function () {
